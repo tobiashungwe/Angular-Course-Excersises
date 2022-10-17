@@ -88,7 +88,8 @@ angularApp.directive("searchResult", function() {
         scope: {
             personObject: "=",
             formattedAddressFunction: "&"
-        }
+        },
+        transclude: true,
     }
     
 
