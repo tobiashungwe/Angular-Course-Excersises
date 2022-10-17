@@ -37,13 +37,34 @@ angularApp.service('nameService', function() {
 // CONTROLLERS
 angularApp.controller('mainController', ['$scope', '$log', 'nameService',  function ($scope,$log, nameService) {
 
-$scope.person = {
+$scope.people = [{
     name: 'John Doe',
     address: '123 Main Street Suite',
     city: 'New york',
     state: 'NY',
     zip: '1111'
-}
+},
+{
+    name: 'Jane Doe',
+    address: '123 Main Street Suite',
+    city: 'Los angels',
+    state: 'LA',
+    zip: '1111'
+},
+{
+    name: 'Example Doe',
+    address: '123 Example Street Suite',
+    city: 'Manhatten',
+    state: 'NY',
+    zip: '1111'
+},
+{
+    name: 'Someone Doe',
+    address: '123 Main Street Suite',
+    city: 'Oostende',
+    state: 'West-Flanders',
+    zip: '1111'
+}]
 
 $scope.formattedAddress = function(person) {
     return  person.address + ',' + person.city + ',' + person.state + ' ' + person.zip;
