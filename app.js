@@ -88,26 +88,6 @@ angularApp.directive("searchResult", function() {
         scope: {
             personObject: "=",
             formattedAddressFunction: "&"
-        },
-        compile: function(elem, attrs) {
-            console.log("Compiling ...");
-            console.log(elem); 
-
-            return {
-                post: function (scope, elements, attrs) {
-                    
-
-                    if(scope.personObject.name == 'Jane Doe')
-                    {
-                        elements.removeAttr('class')
-                    }
-
-                    console.log('Post-linking....');
-                    console.log(elements);
-                },
-                
-
-            }  
         }
     }
     
