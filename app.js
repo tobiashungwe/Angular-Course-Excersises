@@ -36,29 +36,28 @@ angularApp.service('nameService', function() {
 
 // CONTROLLERS
 angularApp.controller('mainController', ['$scope', '$log', 'nameService',  function ($scope,$log, nameService) {
- 
 
-$scope.name = nameService.name; 
-$scope.$watch('name', function() {
-    nameService.name = $scope.name;
-})
-$log.log(nameService.name);
-$log.log(nameService.nameLength());
+
     
     
 }]);
 
 angularApp.controller('secondController', ['$scope', '$log', '$routeParams', 'nameService', function ($scope,$log, $routeParams, nameService) {
- 
 
-    $scope.num = $routeParams.num || 1; 
-    
-    $scope.name = nameService.name; 
 
-    $scope.$watch('name', function() {
-        nameService.name = $scope.name;
-    })
+
 }]);
+
+
+angularApp.directive("searchResult", function() {
+    return {
+        restrict: 'EA',
+        replace: true,
+        templateUrl: 'directives/searchresult.html',
+    }
+    
+
+});
 
 
 
